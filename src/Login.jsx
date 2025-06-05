@@ -12,31 +12,33 @@ function LoginPage() {
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
+const handleSubmit = async (e) => {
+  e.preventDefault();
+  console.log("📨 handleSubmit triggered"); // ✅ Add this line
+  console.log("Submitting", formData);      // Already exists
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    console.log("Submitting", formData);
 
-    try {
-      const res = await fetch("http://localhost:5000/api/login", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formData),
-      });
+  try {
+const response = await fetch(`${import.meta.env.VITE_BACKEND_URL}/api/auth/login`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(formData),
+    });
 
-      const data = await res.json();
+    const data = await response.json();
 
-      if (res.ok) {
-        alert(data.message || "Login successful!");
-        // You can redirect here
-      } else {
-        alert(data.error || "Login failed");
-      }
-    } catch (err) {
-      console.error(err);
-      alert("Something went wrong during login");
+    if (response.ok) {
+      alert(data.message || "Login successful!");
+    } else {
+      alert(data.error || "Login failed");
     }
-  };
+  } catch (err) {
+    console.error("Login error:", err);
+    alert("Something went wrong during login");
+  }
+};
+
+
 
   return (
     <div className="login-page">
