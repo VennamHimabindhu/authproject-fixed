@@ -2,6 +2,9 @@
   "name": "authproject",
   "version": "1.0.0",
   "main": "vite.config.js",
+  "engines": {
+  "node": "18.x"
+},
   "scripts": {
     "dev": "vite",
     "build": "vite build",
@@ -15,7 +18,7 @@
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
     "react-icons": "^5.5.0",
-    "react-router-dom": "^7.6.2"
+    "react-router-dom": "^6.22.3"
   },
   "devDependencies": {
     "@vitejs/plugin-react": "^4.5.1",
