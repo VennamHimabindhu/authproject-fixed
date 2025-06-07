@@ -8,7 +8,7 @@ body {
 
 a {
   text-decoration: none;
-  color: #f9f871; /* pale yellow */
+  color: #c9d787; /* pale yellow-green */
 }
 
 a:hover {
@@ -25,7 +25,7 @@ a:hover {
   justify-content: space-between;
   align-items: center;
   padding: 15px 40px;
-  box-shadow: 0 2px 8px rgba(249, 248, 113, 0.3); /* pale yellow glow */
+  box-shadow: 0 2px 8px rgba(201, 215, 135, 0.3);
   z-index: 100;
 }
 
@@ -44,7 +44,7 @@ a:hover {
 }
 
 .top-nav a.active {
-  color: #f9f871; /* pale yellow */
+  color: #c9d787;
 }
 
 .logo {
@@ -59,58 +59,62 @@ a:hover {
   padding-top: 80px; /* space for navbar */
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: center; /* center vertically */
+  /* Shift slightly upward with translate */
+  position: relative;
+  top: -15px; /* move up by ~15px */
   background: linear-gradient(135deg, #0a0a0a, #1a1a1a);
 }
 
 .login-container {
   width: 100%;
-  max-width: 400px;
-  padding: 30px;
+  max-width: 600px; /* bigger max-width */
+  padding: 50px 40px; /* bigger padding */
 }
 
 .login-box {
   background: #121212;
   border-radius: 12px;
-  padding: 40px 30px;
-  box-shadow: 0 10px 25px rgba(144, 238, 144, 0.5); /* pale green glow */
+  padding: 60px 50px; /* bigger padding */
+  box-shadow: 0 15px 30px rgba(201, 215, 135, 0.6); /* stronger shadow */
   text-align: center;
   border: 1px solid #2e2e2e;
 }
 
 .login-box h2 {
-  margin-bottom: 25px;
+  margin-bottom: 35px;
   font-weight: 700;
   color: #e0e0e0;
+  font-size: 2.8rem; /* even bigger heading */
 }
 
 /* Input container */
 .input-container {
   display: flex;
   align-items: center;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
   border: 1.5px solid #333333;
   border-radius: 8px;
-  padding: 12px 15px;
+  padding: 18px 20px; /* bigger padding */
   transition: border-color 0.3s ease;
   background: #1e1e1e;
 }
 
 .input-container:hover,
 .input-container:focus-within {
-  border-color: #f9f871; /* pale yellow */
+  border-color: #a3c586; /* pale green */
 }
 
 .input-container .icon {
-  color: #f9f871; /* pale yellow */
-  font-size: 18px;
+  color: #c9d787; /* pale yellow-green */
+  font-size: 24px; /* bigger icon */
 }
 
 .input-container input {
   border: none;
   outline: none;
-  font-size: 16px;
-  margin-left: 12px;
+  font-size: 20px;       /* bigger input font */
+  margin-left: 16px;
   width: 100%;
   background: transparent;
   color: #e0e0e0;
@@ -124,34 +128,32 @@ a:hover {
 /* Button */
 .login-button {
   width: 100%;
-  padding: 14px;
-  background: linear-gradient(90deg, #90ee90, #75c175); /* pale green gradient */
+  padding: 18px 0;       /* taller button */
+  background-color: #c9d787; /* pale yellow-green */
   border: none;
-  border-radius: 40px;
-  color: #1a1a1a;
+  border-radius: 60px;   /* very rounded */
+  color: black;          /* black text for contrast */
   font-weight: 700;
-  font-size: 16px;
+  font-size: 20px;       /* bigger font */
   cursor: pointer;
-  box-shadow: 0 6px 15px rgba(144, 238, 144, 0.5);
-  transition: background 0.3s ease, box-shadow 0.3s ease;
+  transition: background-color 0.3s ease;
 }
 
 .login-button:hover {
-  background: linear-gradient(90deg, #75c175, #4f914f);
-  box-shadow: 0 8px 20px rgba(117, 193, 117, 0.7);
+  background-color: #a3c586; /* pale green */
 }
 
 /* Links */
 .links {
-  margin-top: 20px;
+  margin-top: 30px;
   display: flex;
   justify-content: space-between;
-  font-size: 14px;
+  font-size: 16px;
   color: #94a3b8;
 }
 
 .links a {
-  color: #f9f871; /* pale yellow */
+  color: #c9d787;
 }
 
 .links a:hover {
@@ -160,13 +162,30 @@ a:hover {
 
 /* Responsive */
 @media (max-width: 480px) {
-  .login-box {
+  .login-container {
+    max-width: 90vw; /* almost full width */
     padding: 30px 20px;
   }
-  .top-nav {
-    padding: 15px 20px;
+  .login-box {
+    padding: 40px 25px;
   }
-  .top-nav ul {
-    gap: 12px;
+  .login-box h2 {
+    font-size: 2.2rem;
+  }
+  .input-container {
+    padding: 14px 12px;
+  }
+  .input-container .icon {
+    font-size: 20px;
+  }
+  .input-container input {
+    font-size: 18px;
+  }
+  .login-button {
+    font-size: 18px;
+    padding: 16px 0;
+  }
+  .links {
+    font-size: 15px;
   }
 }
