@@ -38,8 +38,8 @@ a:hover {
 }
 
 .top-nav a {
-  font-weight: 700;
-  font-size: 22px; /* increased from 14px */
+  font-weight: 800;
+  font-size: 24px; /* increased from 14px */
   color: #f1f5f9;
   letter-spacing: 0.5px;
 }
@@ -63,13 +63,13 @@ a:hover {
   justify-content: center;
   align-items: center;
   position: relative;
-  top: -80px; /* slight upward shift (≈1cm) */
+  top: -200px; /* slight upward shift (≈1cm) */
   background: linear-gradient(135deg, #0a0a0a, #1a1a1a);
 }
 
 /* Login Form Container */
 .login-container {
-  width: 100%;
+  width: 150%;
   max-width: 570px; /* bigger size */
   padding: 60px;
 }
