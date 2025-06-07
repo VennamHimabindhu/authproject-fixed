@@ -2,13 +2,13 @@
 body {
   margin: 0;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background: #000000; /* black background */
-  color: #e0e0e0; /* light text */
+  background: #000000;
+  color: #e0e0e0;
 }
 
 a {
   text-decoration: none;
-  color: #c9d787; /* pale yellow-green */
+  color: #a3e635; /* pale green */
 }
 
 a:hover {
@@ -20,12 +20,12 @@ a:hover {
   position: fixed;
   top: 0;
   width: 100%;
-  background: #111111; /* very dark gray */
+  background: #111111;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 15px 40px;
-  box-shadow: 0 2px 8px rgba(201, 215, 135, 0.3);
+  box-shadow: 0 2px 8px rgba(244, 244, 112, 0.3); /* pale yellow glow */
   z-index: 100;
 }
 
@@ -38,13 +38,15 @@ a:hover {
 }
 
 .top-nav a {
-  font-weight: 600;
-  font-size: 14px;
-  color: #cbd5e1; /* light gray */
+  font-weight: 700;
+  font-size: 22px; /* increased from 14px */
+  color: #f1f5f9;
+  letter-spacing: 0.5px;
 }
 
+
 .top-nav a.active {
-  color: #c9d787;
+  color: #facc15; /* pale yellow active link */
 }
 
 .logo {
@@ -53,139 +55,131 @@ a:hover {
   object-fit: contain;
 }
 
-/* Login container */
+/* Login Page Positioning */
 .login-page {
   min-height: 100vh;
-  padding-top: 80px; /* space for navbar */
+  padding-top: 80px;
   display: flex;
   justify-content: center;
-  align-items: center; /* center vertically */
-  /* Shift slightly upward with translate */
+  align-items: center;
   position: relative;
-  top: -15px; /* move up by ~15px */
+  top: -80px; /* slight upward shift (≈1cm) */
   background: linear-gradient(135deg, #0a0a0a, #1a1a1a);
 }
 
+/* Login Form Container */
 .login-container {
   width: 100%;
-  max-width: 600px; /* bigger max-width */
-  padding: 50px 40px; /* bigger padding */
+  max-width: 570px; /* bigger size */
+  padding: 60px;
 }
 
 .login-box {
   background: #121212;
   border-radius: 12px;
-  padding: 60px 50px; /* bigger padding */
-  box-shadow: 0 15px 30px rgba(201, 215, 135, 0.6); /* stronger shadow */
+  padding: 60px 45px;
+  box-shadow: 0 10px 25px rgba(244, 244, 112, 0.3); /* yellow glow */
   text-align: center;
   border: 1px solid #2e2e2e;
 }
 
 .login-box h2 {
-  margin-bottom: 35px;
+  margin-bottom: 25px;
   font-weight: 700;
-  color: #e0e0e0;
-  font-size: 2.8rem; /* even bigger heading */
+  font-size: 2.7rem;
+  color: #fdfdfd;
 }
 
-/* Input container */
+/* Input Fields */
 .input-container {
   display: flex;
   align-items: center;
-  margin-bottom: 30px;
+  margin-bottom: 25px;
   border: 1.5px solid #333333;
   border-radius: 8px;
-  padding: 18px 20px; /* bigger padding */
+  padding: 18px 22px;
   transition: border-color 0.3s ease;
   background: #1e1e1e;
 }
 
 .input-container:hover,
 .input-container:focus-within {
-  border-color: #a3c586; /* pale green */
+  border-color: #a3e635; /* pale green */
 }
 
 .input-container .icon {
-  color: #c9d787; /* pale yellow-green */
-  font-size: 24px; /* bigger icon */
+  color: #a3e635;
+  font-size: 24px;
 }
 
 .input-container input {
   border: none;
   outline: none;
-  font-size: 20px;       /* bigger input font */
-  margin-left: 16px;
+  font-size: 19px;
+  margin-left: 12px;
   width: 100%;
   background: transparent;
   color: #e0e0e0;
-  font-weight: 500;
 }
 
 .input-container input::placeholder {
   color: #9ca3af;
 }
 
-/* Button */
+/* Submit Button */
 .login-button {
   width: 100%;
-  padding: 18px 0;       /* taller button */
-  background-color: #c9d787; /* pale yellow-green */
+  padding: 20px;
+  background-color: #facc15; /* pale yellow */
   border: none;
-  border-radius: 60px;   /* very rounded */
-  color: black;          /* black text for contrast */
+  border-radius: 40px;
+  color: black;
   font-weight: 700;
-  font-size: 20px;       /* bigger font */
+  font-size: 19px;
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
 
 .login-button:hover {
-  background-color: #a3c586; /* pale green */
+  background-color: #eab308; /* deeper yellow */
 }
 
 /* Links */
 .links {
-  margin-top: 30px;
+  margin-top: 25px;
   display: flex;
   justify-content: space-between;
-  font-size: 16px;
-  color: #94a3b8;
+  font-size: 14px;
+  color: #cbd5e1;
 }
 
 .links a {
-  color: #c9d787;
+  color: #a3e635;
 }
 
 .links a:hover {
   text-decoration: underline;
 }
 
-/* Responsive */
+/* Responsive for small screens */
 @media (max-width: 480px) {
-  .login-container {
-    max-width: 90vw; /* almost full width */
-    padding: 30px 20px;
-  }
   .login-box {
     padding: 40px 25px;
   }
-  .login-box h2 {
-    font-size: 2.2rem;
+
+  .top-nav {
+    padding: 15px 20px;
+    flex-direction: column;
+    align-items: flex-start;
   }
-  .input-container {
-    padding: 14px 12px;
+
+  .top-nav ul {
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 10px;
   }
-  .input-container .icon {
-    font-size: 20px;
-  }
-  .input-container input {
-    font-size: 18px;
-  }
-  .login-button {
-    font-size: 18px;
-    padding: 16px 0;
-  }
-  .links {
-    font-size: 15px;
+
+  .login-container {
+    padding: 30px;
   }
 }
