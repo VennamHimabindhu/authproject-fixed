@@ -15,12 +15,11 @@ function LoginPage() {
   };
 const handleSubmit = async (e) => {
   e.preventDefault();
-  console.log("📨 handleSubmit triggered"); // ✅ Add this line
-  console.log("Submitting", formData);      // Already exists
-
+  console.log("📨 handleSubmit triggered");
+  console.log("Submitting", formData);
 
   try {
-const response = await fetch(`${import.meta.env.VITE_BACKEND_URL}/api/auth/login`, {
+    const response = await fetch(`${import.meta.env.VITE_BACKEND_URL}/api/auth/login`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(formData),
@@ -29,15 +28,24 @@ const response = await fetch(`${import.meta.env.VITE_BACKEND_URL}/api/auth/login
     const data = await response.json();
 
     if (response.ok) {
-      alert(data.message || "Login successful!");
+      console.log("✅ Login success:", data);
+      
+      // Save token to localStorage (or context)
+      localStorage.setItem("token", data.token);
+
+      alert("Login successful!");
+
+      // (Optional) Redirect after login
+      // navigate("/dashboard"); 
     } else {
-      alert(data.error || "Login failed");
+      alert(data.message || data.error || "Login failed");
     }
   } catch (err) {
     console.error("Login error:", err);
     alert("Something went wrong during login");
   }
 };
+
 
 
 
